@@ -1,0 +1,10 @@
+{{!< default}}
+
+<section>
+    <h2 class="font-weight-bolder">Recent posts</h2>
+    {{#foreach posts}}
+        {{> "post-card"}}
+    {{/foreach}}
+</section>
+
+{{pagination}}
