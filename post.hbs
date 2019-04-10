@@ -1,41 +1,31 @@
 {{!< default}}
 
 {{#post}}
-    <div class="row post-card-row">
-        <div class="col-12">
-            <h2 class="font-weight-bolder">{{title}}</h2>
-            <p>
-                <small>
-                    {{date format="DD MMMM YYYY"}}, {{reading_time}}, {{tags prefix="tags: "}}
-                </small>
-            </p>
-        </div>
+    <div>
+        <h2>{{title}}</h2>
+        <small>
+            {{date format="DD MMMM YYYY"}}, {{reading_time}}, {{tags prefix="tags: "}}
+        </small>
     </div>
     <hr/>
-    <div class="row post-card-row">
-        <div class="col-12 text-justify post-content">
-            {{content}}
-        </div>
+    <div class="text-justify">
+        {{content}}
     </div>
     {{#unless page}}
-        <div class="row post-card-row">
-            <div class="col-12">
-                <div id="disqus_thread"></div>
-                <script>
-                    var disqus_config = function () {
-                        this.page.url = "{{url absolute="true"}}";
-                        this.page.identifier = "ghost-{{comment_id}}";
-                    };
-                    (function () { // DON'T EDIT BELOW THIS LINE
-                        var d = document, s = d.createElement('script');
-                        s.src = 'https://blogdotghost.disqus.com/embed.js';
-                        s.setAttribute('data-timestamp', +new Date());
-                        (d.head || d.body).appendChild(s);
-                    })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
-                    powered by Disqus.</a></noscript>
-            </div>
-        </div>
+        <div id="disqus_thread"></div>
+        <script>
+            var disqus_config = function () {
+                this.page.url = "{{url absolute="true"}}";
+                this.page.identifier = "ghost-{{comment_id}}";
+            };
+            (function () { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://blogdotghost.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments
+            powered by Disqus.</a></noscript>
     {{/unless}}
 {{/post}}

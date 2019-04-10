@@ -1,15 +1,11 @@
-<section>
-    <div class="row">
-        <div class="col-12 text-center">
-            <small>
-                {{#if prev}}
-                    <a class="newer-posts" href="{{page_url prev}}">&larr; Newer posts</a>
-                {{/if}}
-                <span class="page-number px-1">Page {{page}} of {{pages}}</span>
-                {{#if next}}
-                    <a class="older-posts" href="{{page_url next}}">Older posts &rarr;</a>
-                {{/if}}
-            </small>
-        </div>
-    </div>
-</section>
+<div class="text-center">
+    <small>
+        {{#if prev}}
+            <a href="{{page_url prev}}">&larr; Newer posts</a>
+        {{/if}}
+        <span>Page {{page}} of {{pages}}</span>
+        {{#if next}}
+            <a href="{{page_url next}}">Older posts &rarr;</a>
+        {{/if}}
+    </small>
+</div>
